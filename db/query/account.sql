@@ -1,7 +1,3 @@
-/* this comment instruct how tp generate the Golang function signature for this query.
-    :one specify the no of object returns.
- */
-
 -- name: CreateAccount :one 
 INSERT INTO accounts (
   owner,
@@ -9,5 +5,14 @@ INSERT INTO accounts (
   currency
 ) VALUES (
   $1, $2, $3
-)
-RETURNING *;
+) RETURNING *;
+
+-- name: GetAccount :one
+SELECT * FROM accounts
+WHERE id = $1 LIMIT 1;
+
+-- name: ListAccount :many
+SELECT * FROM accounts
+ORDER BY id
+LIMIT $1
+OFFSET $2;
