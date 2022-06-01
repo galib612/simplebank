@@ -1,3 +1,6 @@
+postgresstart:
+	docker start postgres12
+
 postgresstop:
 	docker stop postgres12
 
@@ -25,4 +28,4 @@ sqlc:
 test:
 	go test -v -cover ./...
 
-.PHONY: postgres createdb dropdb migrateup migratedown postgresstop postgresrm sqlc test
+.PHONY: postgres createdb dropdb migrateup migratedown postgresstop postgresrm postgresstart sqlc test
