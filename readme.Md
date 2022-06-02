@@ -1,4 +1,6 @@
 several way to create CURD REestFul api
+
+
     1.) database/sql (low-level)
         very fast & straightforward
         manual mapping SQL fields to variables
@@ -73,5 +75,25 @@ several way to create CURD REestFul api
 
            By Default Read Committed in postgres.
            By Default Repeatable read in MySql.
+
+
+           ..........................................................................................
+
+           Popular golang web frameworks with github star
+
+           1. Gin      42.4k               5. Martini        11.1k
+           2. beego    25.1k               6. Fiber          8.6k
+           3. Echo     18.3k               7. Buffalo        5.9l
+           4. Revel    11.9k
+
+           Popular Http routers
+
+           1. FastHttp       13.6k
+           2. Gorill Mux     12.9k        
+           3. HttpRouter     11.9k  
+           4. Chi            8.3k
+
+
+
 
            
