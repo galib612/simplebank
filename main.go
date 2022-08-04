@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 
+<<<<<<< HEAD
 	"github.com/galib612/simplebank/api"
 	authdb "github.com/galib612/simplebank/authdb/sqlc"
 	db "github.com/galib612/simplebank/db/sqlc"
@@ -87,6 +88,29 @@ func main() {
 	server := api.NewServer(postgresstore, authdbstore)
 
 	err = server.Start(config.ServerAddress)
+=======
+	api "github.com/galib612/simplebank/api"
+	db "github.com/galib612/simplebank/db/sqlc"
+	_ "github.com/lib/pq"
+)
+
+const (
+	dbDriver      = "postgres"
+	dbSource      = "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable"
+	serveraddress = "0.0.0.0:8080"
+)
+
+func main() {
+	conn, err := sql.Open(dbDriver, dbSource)
+	if err != nil {
+		log.Fatal("cannot connect to db:", err)
+	}
+
+	store := db.NewStore(conn)
+	server := api.NewServer(store)
+
+	err = server.Start(serveraddress)
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 	if err != nil {
 		log.Fatal("cannot start the server:", err)
 	}

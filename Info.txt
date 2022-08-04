@@ -9,7 +9,10 @@ start a postgres instance
 	docker run --name postgres12 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
 
 	Run the container
+<<<<<<< HEAD
 		docker exec -it postgres12 psql
+=======
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 		docker exec -it postgres12 psql -U root
 		The postgrSql images setup trust authentication locally so may notice password is not required when connecting from localhost
 
@@ -67,7 +70,11 @@ Setup Postgres service in github acction:
     https://docs.github.com/en/actions/using-containerized-services/creating-postgresql-service-containers
 
 Setup Golang-migrate CLI:
+<<<<<<< HEAD
     https://github.com/golang-migrate/migrate/tree/master/cmd/migrate
 
 SetUp gin:
     https://github.com/gin-gonic/gin
+=======
+    https://github.com/golang-migrate/migrate/tree/master/cmd/migrate
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66

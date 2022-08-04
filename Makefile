@@ -51,8 +51,12 @@ test:
 
 server:
 	go run main.go
+<<<<<<< HEAD
 
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/galib612/simplebank/db/sqlc Store
 
 .PHONY: postgres createdb dropdb migrateup migratedown postgresstop postgresrm postgresstart sqlc test server mock mariadb mariadbauthstart mariadbauthstop mariadbmigratedown mariadbmigrateup createmariadb mariadbauthrm
+=======
+.PHONY: postgres createdb dropdb migrateup migratedown postgresstop postgresrm postgresstart sqlc test server
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66

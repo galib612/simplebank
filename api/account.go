@@ -1,14 +1,20 @@
 package api
 
 import (
+<<<<<<< HEAD
 	"database/sql"
+=======
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 	"net/http"
 
 	db "github.com/galib612/simplebank/db/sqlc"
 	"github.com/gin-gonic/gin"
+<<<<<<< HEAD
 
 	_ "github.com/swaggo/swag/example/celler/httputil"
 	_ "github.com/swaggo/swag/example/celler/model"
+=======
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 )
 
 type CreateAccountRequest struct {
@@ -19,6 +25,7 @@ type CreateAccountRequest struct {
 
 //Info -- when using gin, everything we do inside a handler will involve the context object
 //        it provide lots of covenient methods to read inputs parameters and write responses.
+<<<<<<< HEAD
 
 // createAccount godoc
 // @Summary      Creare an account
@@ -33,6 +40,8 @@ type CreateAccountRequest struct {
 // @Failure      500  {string}  string    "error"
 // @Security     BasicAuth
 // @Router       /accounts/create/ [post]
+=======
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 func (server *Server) createAccount(ctx *gin.Context) {
 	var req CreateAccountRequest
 	if err := ctx.BindJSON(&req); err != nil {
@@ -49,6 +58,7 @@ func (server *Server) createAccount(ctx *gin.Context) {
 		Balance:  req.Balance,
 	}
 
+<<<<<<< HEAD
 	account, err := server.postgresStore.CreateAccount(ctx, arg)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errResponse(err))
@@ -89,6 +99,10 @@ func (server *Server) getAccount(ctx *gin.Context) {
 			ctx.JSON(http.StatusNotFound, errResponse(err))
 			return
 		}
+=======
+	account, err := server.store.CreateAccount(ctx, arg)
+	if err != nil {
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
 		ctx.JSON(http.StatusInternalServerError, errResponse(err))
 		return
 	}
@@ -96,6 +110,7 @@ func (server *Server) getAccount(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, account)
 
 }
+<<<<<<< HEAD
 
 type ListAccountRequest struct {
 	PageId   int32 `form:"page_id" binding:"required,min=1"`
@@ -222,3 +237,5 @@ func (server *Server) deleteAccount(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, msg)
 	}
 }
+=======
+>>>>>>> dace6cc8a3810b11427e67eccada66a80cd49e66
